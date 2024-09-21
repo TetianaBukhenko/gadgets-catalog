@@ -1,0 +1,34 @@
+{
+  "files": {
+    "main.css": "./static/css/main.fccd77b0.css",
+    "main.js": "./static/js/main.16f7b13b.js",
+    "static/media/watch-1.png": "./static/media/watch-1.1a06de9a4a99566286f8.png",
+    "static/media/phone-1.png": "./static/media/phone-1.a3a01150b70567ae56d6.png",
+    "static/media/tablet-1.png": "./static/media/tablet-1.43a4865c020eea589ba5.png",
+    "static/media/tablet.png": "./static/media/tablet.e6c39f73f10637b37e14.png",
+    "static/media/watch.png": "./static/media/watch.1e42318b8f7a711d41e0.png",
+    "static/media/product-not-found.png": "./static/media/product-not-found.8214da88616b09290166.png",
+    "static/media/Mont-Regular.otf": "./static/media/Mont-Regular.1d26d89f7339866d3133.otf",
+    "static/media/Mont-SemiBold.otf": "./static/media/Mont-SemiBold.8979d71a3146ca1d761f.otf",
+    "static/media/Mont-Bold.otf": "./static/media/Mont-Bold.03c8c2f6127c1da0fc39.otf",
+    "static/media/phone.png": "./static/media/phone.e586cc5a919332bd5c52.png",
+    "static/media/page-not-found.png": "./static/media/page-not-found.6f5b123471bc09721371.png",
+    "static/media/cart-is-empty.png": "./static/media/cart-is-empty.86ebaf664449a2f61e5e.png",
+    "static/media/shopping-bag.svg": "./static/media/shopping-bag.6b6ebef2b16ee05b847f.svg",
+    "static/media/favourites.svg": "./static/media/favourites.dfe9c698479439faceaf.svg",
+    "static/media/home.svg": "./static/media/home.d4c29e4f137b3a79235a.svg",
+    "static/media/search.svg": "./static/media/search.a3d601afa6e32569012e.svg",
+    "static/media/close.svg": "./static/media/close.ab8ba6b8a2b2e909c744.svg",
+    "static/media/menu.svg": "./static/media/menu.7d886604721a2522b7ee.svg",
+    "static/media/plus.svg": "./static/media/plus.dea157243cc9d361ac05.svg",
+    "static/media/arrow.svg": "./static/media/arrow.e028d3889646e0b5e56c.svg",
+    "index.html": "./index.html",
+    "static/media/minus.svg": "./static/media/minus.cecb4be39afa7b933ec1.svg",
+    "main.fccd77b0.css.map": "./static/css/main.fccd77b0.css.map",
+    "main.16f7b13b.js.map": "./static/js/main.16f7b13b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fccd77b0.css",
+    "static/js/main.16f7b13b.js"
+  ]
+}
