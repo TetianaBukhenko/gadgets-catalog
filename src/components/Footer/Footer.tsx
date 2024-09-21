@@ -31,6 +31,7 @@ export const Footer = () => {
       <ul className={styles.nav}>
         <li>
           <Link
+            target="_blank"
             to="https://github.com/TetianaBukhenko"
             className={getLinkClass}
           >
@@ -47,6 +48,7 @@ export const Footer = () => {
         </li>
         <li>
           <Link
+            target="_blank"
             to="https://www.linkedin.com/in/tanya-bukhenko-9898871a5/"
             className={getLinkClass}
           >
