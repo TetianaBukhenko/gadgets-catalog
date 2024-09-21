@@ -1,0 +1,124 @@
+import { useContext, useEffect, useMemo, useState } from 'react';
+
+import styles from './Cart.module.scss';
+import { ProductContext } from '../../store/ProductContext';
+import { CartItem } from './components/CartItem/CartItem';
+import { BreadcrumbBack } from '../../components/Breadcrumb/Breadcrumb';
+import { ErrorText } from '../../constants/errorText';
+import { Error } from '../../components/Error';
+import { ModalDialog } from './components/ModalDialog';
+import { getCountOf } from '../../utils/utils';
+import { ProductGeneral } from '../../types/ProductGeneral';
+import { getButtonClass } from '../../utils/getButtonClass';
+
+export const Cart = () => {
+  const [showElement, setShowComponent] = useState('');
+  const {
+    addedItems: addedItemsFromServer,
+    setAddedItems,
+    products,
+    darkTheme,
+  } = useContext(ProductContext);
+
+  useEffect(() => {
+    setShowComponent('show');
+  }, []);
+  const addedItems = useMemo(
+    () =>
+      addedItemsFromServer
+        .map(({ item, count }) => {
+          const newItem = products.find(
+            product => product.itemId == item,
+          ) as ProductGeneral;
+
+          return { item: newItem, count };
+        })
+        .sort((el1, el2) => el1.item.itemId.localeCompare(el2.item.itemId)),
+    [products, addedItemsFromServer],
+  );
+  const [showModal, setShowModal] = useState(false);
+
+  const sum = useMemo(() => getCountOf.sumInCart(addedItems), [addedItems]);
+
+  const itemsCount = useMemo(() => {
+    return getCountOf.itemsInCart(addedItemsFromServer);
+  }, [addedItemsFromServer]);
+
+  function handleDelete(id = '') {
+    if (id === '') {
+      setAddedItems(prevItems => {
+        return prevItems.filter(({ item }) => item === id);
+      });
+    } else {
+      setAddedItems(prevItems => {
+        return prevItems.filter(({ item }) => item !== id);
+      });
+    }
+  }
+
+  const handlCountChange = (currentItem: string, newCount: number) => {
+    setAddedItems(oldItems => {
+      const newItems = [...oldItems].filter(({ item }) => item != currentItem);
+
+      return [...newItems, { item: currentItem, count: newCount }];
+    });
+  };
+
+  return (
+    <section
+      className={`${styles.container}  ${showModal ? styles.hideOverflow : ''}`}
+    >
+      <BreadcrumbBack />
+      <p
+        className={`text--page-title ${styles.title} hidden-left ${showElement}`}
+      >
+        Cart
+      </p>
+
+      {showModal && (
+        <ModalDialog
+          onDelete={handleDelete}
+          displayModal={(v: boolean) => {
+            setShowModal(v);
+          }}
+        />
+      )}
+      {addedItems.length === 0 ? (
+        <div className={styles.emptyCart}>
+          <Error errorText={ErrorText.emptyCart} />
+        </div>
+      ) : (
+        <div className={`${styles.gridContainer} hidden-bottom ${showElement}`}>
+          <div className={styles.items}>
+            {addedItems.map(({ item, count }) => (
+              <CartItem
+                item={item}
+                numberOfItems={count}
+                key={item.id}
+                updateCount={(newCount: number) => {
+                  handlCountChange(item.itemId, newCount);
+                }}
+                handleDelete={handleDelete}
+              />
+            ))}
+          </div>
+
+          <div className={`${styles.cost} border`}>
+            <div className={`${styles.cost__container} border--bottom`}>
+              <div className={`text--page-title`}>{`$ ${sum}`}</div>
+              <p className="text--grey">{`Total for ${itemsCount} items`}</p>
+            </div>
+            <button
+              className={`${getButtonClass.main(darkTheme)} button--big ${styles.buttonMain}`}
+              onClick={() => {
+                setShowModal(true);
+              }}
+            >
+              Checkout
+            </button>
+          </div>
+        </div>
+      )}
+    </section>
+  );
+};

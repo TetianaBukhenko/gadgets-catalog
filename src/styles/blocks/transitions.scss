@@ -1,0 +1,39 @@
+
+.hidden-left {
+  // transition: all 3s;
+  transform: translateX(-100px);
+}
+
+.hidden-right {
+  transform: translateX(30%);
+}
+
+.hidden-bottom {
+  transform: scale(0.8) translateY(100px);
+}
+
+.hidden {
+  transform: scale(0.8);
+}
+
+.hidden-modal {
+  transition: transform 1s;
+  transform: scale(0.1);
+}
+
+.show {
+  transition: transform 1s;
+  transform: scale(1);
+}
+
+.show-modal {
+  transition: all 2s;
+  transform:  scale(0.7) perspective(400px) translateZ(100px);
+
+
+}
+
+.hidden-cards {
+  transform: scale(0.8) translate(100%);
+}
+
