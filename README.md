@@ -13,17 +13,14 @@ https://tetianabukhenko.github.io/gadgets-catalog/
 - [Original Dark](https://www.figma.com/file/BUusqCIMAWALqfBahnyIiH/Phone-catalog-(V2)-Original-Dark)
 
 ## Technologies
-- React
-- Typescript
-- JavaScript
-- SCSS
+React, React Router, Typescript, JavaScript, SCSS modules
 
 ## Features
 1. *Production optimization*: React hooks(useMemo, useCallback, useEffect) and React.memo are used to improve website performance.
 2. *Local Storage*: Utilizes local storage to persist user data across sessions.
 3. *State Management*: React hooks (useState, useContext, useEffect) are used to manage the application's state.
 4. *Custom hooks*: They are aimed to track the width of the screen, save data to the local storage, and track the visibility of the component.
-5. *CSS modules*: They improve the structure and reduce the possibility of confusion with selectors.
+5. *SCSS modules*: They improve the structure and reduce the possibility of confusion with selectors.
 6. *Various sliders*: present trending items, similar items, and those on sale. All the sliders are swipable.
 7. *Responsive Design*: The layout is fully responsive and adjusts for mobile, tablet, and desktop screen sizes.
 8. *Interactive layout* and *smooth scrolling*: Using the ability to swipe, different animations and transitions are aimed to improve user experience.
