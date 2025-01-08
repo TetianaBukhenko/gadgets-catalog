@@ -18,7 +18,7 @@ React, React Router, Typescript, JavaScript, SCSS modules
 ## Features
 1. *Production optimization*: React hooks(useMemo, useCallback, useEffect) and React.memo are used to improve website performance.
 2. *Local Storage*: Utilizes local storage to persist user data across sessions.
-3. *State Management*: React hooks (useState, useContext, useEffect) are used to manage the application's state.
+3. *State Management*: React hooks (useState, useContext) are used to manage the application's state.
 4. *Custom hooks*: They are aimed to track the width of the screen, save data to the local storage, and track the visibility of the component.
 5. *SCSS modules*: They improve the structure and reduce the possibility of confusion with selectors.
 6. *Various sliders*: present trending items, similar items, and those on sale. All the sliders are swipable.
